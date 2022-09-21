@@ -130,6 +130,13 @@ class LoginActivity : AppCompatActivity(), LoginNavigator {
         shortToast(message)
     }
 
+    override fun onBackPressed() {
+        if (bottomSheetBehavior.state == BottomSheetBehavior.STATE_EXPANDED)
+            bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+        else
+            super.onBackPressed()
+    }
+
     override fun onDestroy() {
         super.onDestroy()
     }
